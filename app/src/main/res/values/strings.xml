@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LearnBlender3d</string>
+    <string name="cgStrorm">cgStrorm</string>
 </resources>
