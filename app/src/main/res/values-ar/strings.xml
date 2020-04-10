@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">"تعلم "</string>
+    <string name="cgStorm">cgStorm</string>
+    <string name="learn">تعلم</string>
+    <string name="challenge">تحدي</string>
+    <string name="community">المنتدى</string>
+    <string name="start">ابدأ</string>
+    <string name="next">تابع</string>
+    <string name="cgfasttrack_description">هذا هو أفضل برنامج تعليمي لبلندر فهو قصير وستتمكن من صنع سيف رائع</string>
+    <string name="blender_guru_description">تم إعداد هذا البرنامج التعليمي من قبل خبير بلندر الذي يعد أكثر مستخدمي الخلاط شيوعًا في هذا البرنامج التعليمي وستتمكن من متابعته معه وتصنع دونات لذيذة</string>
+    <string name="borncg_description">من السهل متابعة البرنامج التعليمي لبلندر هذا وكل حلقة تحتوي على مشروع صغير يمكنك متابعته
+</string>
+    <string name="blenderoffical_description">هذا هو البرنامج التعليمي الرسمي لبلندر الذي يغطي أساسيات بلندر
+</string>
+</resources>

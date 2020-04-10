@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">LearnBlender3d</string>
-    <string name="cgStrorm">cgStrorm</string>
+    <string name="cgStorm">cgStorm</string>
+    <string name="learn">Learn</string>
+    <string name="challenge">Challenge</string>
+    <string name="community">Community</string>
+    <string name="start">Start</string>
+    <string name="next">Next</string>
+    <string name="cgfasttrack_description">This is the best blender tutorial it is short and you will be able to make a cool sword</string>
+    <string name="blender_guru_description">This tutorial is made by blender guru who is the most popular blender user in this tutorial you will be able to follow along with him and make a delicious donut</string>
+    <string name="borncg_description">This blender tutorial is easy to follow along and every episode has a small project you could follow</string>
+    <string name="blenderoffical_description">This is the official Blender tutorial that covers basics to blender</string>
 </resources>

@@ -7,4 +7,6 @@
     <color name="colorWhiteDB">#FAFAFA</color>
     <color name="colorWhiteE5">#E5E5E5</color>
     <color name="colorBorder">#DBDBDB</color>
+    <color name="colorTransparent">#B3262626</color>
+    <color name="colorBlueshWhite">#F9FAFE</color>
 </resources>

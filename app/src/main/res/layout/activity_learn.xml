@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LearnActivity">
+
+
+    <TextView
+        android:id="@+id/modelingTexttView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Basic Modeling"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modelingImageView"
+        tools:textColor="@color/design_default_color_on_secondary" />
+
+    <ImageView
+        android:id="@+id/modelingImageView"
+        android:layout_width="197dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_cubes" />
+
+    <TextView
+        android:id="@+id/videosTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Video Tutorials"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modelingImageView"
+        tools:textColor="@color/design_default_color_on_secondary" />
+
+    <ImageView
+        android:id="@+id/videosImageView"
+        android:layout_width="197dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="276dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_3d_printer" />
+
+    <ImageView
+        android:id="@+id/nodesImageView"
+        android:layout_width="197dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="504dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_virtual_reality_glasses" />
+
+    <TextView
+        android:id="@+id/nodesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="468dp"
+        android:fontFamily="@font/raleway_medium"
+        android:text="Material Nodes"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modelingImageView"
+        tools:textColor="@color/design_default_color_on_secondary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

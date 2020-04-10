@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,28 +7,173 @@
     tools:context=".MainActivity"
     android:background="@color/colorWhite"
     >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/cgstorm_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/cgStorm"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dropdown_menu"
+            android:layout_marginStart="190dp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/learnLayout"
+        android:orientation="horizontal"
+        android:layout_width="500dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/toolBar"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        >
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolBar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-            android:background="@color/colorPrimary"
-            >
+        <View
+            android:id="@+id/learnView"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorTransparent"
+            android:background="@drawable/border"
+            android:backgroundTintMode="src_over"
+            />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:textColor="@color/colorWhite"
-                android:text="@string/cgStrorm"
-                android:textSize="30sp"
-                android:fontFamily="sans-serif-black"
-                />
-        </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:id="@+id/learnTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/learnView"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="78dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/learn"
+            android:textColor="@color/colorWhite"
+            android:textSize="38sp" />
+
+        <TextView
+            android:id="@+id/learnDescriptionTextView"
+            android:layout_width="169dp"
+            android:layout_height="91dp"
+            android:layout_below="@+id/learnTextView"
+            android:layout_alignEnd="@+id/learnView"
+            android:layout_marginEnd="11dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="Start Learning with cgStorm"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
     </RelativeLayout>
-</ScrollView>
+    <RelativeLayout
+        android:id="@+id/challengeLayout"
+        android:orientation="horizontal"
+        android:layout_width="500dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/learnLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        >
+
+        <View
+            android:id="@+id/challengeView"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorTransparent"
+            android:background="@drawable/border"
+            android:backgroundTintMode="src_over"
+            />
+
+        <TextView
+            android:id="@+id/challengeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/challengeView"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/challenge"
+            android:textColor="@color/colorWhite"
+            android:textSize="38sp" />
+
+        <TextView
+            android:id="@+id/challengeDescriptionTextView"
+            android:layout_width="169dp"
+            android:layout_height="91dp"
+            android:layout_below="@+id/challengeTextView"
+            android:layout_alignEnd="@+id/challengeView"
+            android:layout_marginEnd="11dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="Start daily challenges to win points"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/communityLayout"
+        android:orientation="horizontal"
+        android:layout_width="500dp"
+        android:layout_height="170dp"
+        android:layout_below="@+id/challengeLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        >
+
+        <View
+            android:id="@+id/communityView"
+            android:layout_width="280dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/colorTransparent"
+            android:background="@drawable/border"
+            android:backgroundTintMode="src_over"
+            />
+
+        <TextView
+            android:id="@+id/communityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/communityView"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="@string/community"
+            android:textColor="@color/colorWhite"
+            android:textSize="38sp" />
+
+        <TextView
+            android:id="@+id/communityDescriptionTextView"
+            android:layout_width="169dp"
+            android:layout_height="91dp"
+            android:layout_below="@+id/communityTextView"
+            android:layout_alignEnd="@+id/communityView"
+            android:layout_marginEnd="11dp"
+            android:fontFamily="@font/raleway_regular"
+            android:text="Talk to amazing people like you"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp" />
+    </RelativeLayout>
+</RelativeLayout>
