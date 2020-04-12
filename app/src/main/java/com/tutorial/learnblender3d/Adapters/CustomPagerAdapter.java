@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,23 +43,26 @@ public class CustomPagerAdapter extends RecyclerView.Adapter<CustomPagerAdapter.
         return onBoardingItems.size();
     }
 
-    class OnBoardingViewHolder extends RecyclerView.ViewHolder {
+    static class OnBoardingViewHolder extends RecyclerView.ViewHolder {
 
         private TextView titleTextView;
         private TextView descriptionTextView;
         private ImageView imageView;
+        private LinearLayout linearLayout;
 
         public OnBoardingViewHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.titleTextView);
             descriptionTextView = itemView.findViewById(R.id.descriptionTextView);
             imageView = itemView.findViewById(R.id.imageView);
+            linearLayout = itemView.findViewById(R.id.linearLayout);
         }
 
         void setOnBoardingData(CustomModel onBoardingItem) {
             titleTextView.setText(onBoardingItem.getTitle());
             descriptionTextView.setText(onBoardingItem.getDescription());
             imageView.setImageResource(onBoardingItem.getImageResource());
+//            linearLayout.setBackgroundColor(onBoardingItem.getBackgroundColor());
         }
     }
 

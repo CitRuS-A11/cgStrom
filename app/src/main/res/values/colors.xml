@@ -9,4 +9,9 @@
     <color name="colorBorder">#DBDBDB</color>
     <color name="colorTransparent">#B3262626</color>
     <color name="colorBlueshWhite">#F9FAFE</color>
+    <color name="blueshBlack">#3E416D</color>
+    <color name="grayishColor">#c4c4c4</color>
+    <color name="answerCorrectGreen">#4DF776</color>
+    <color name="background_page1">#E0EAF4</color>
+    <color name="louisDuMont">#E0EAF4</color>
 </resources>

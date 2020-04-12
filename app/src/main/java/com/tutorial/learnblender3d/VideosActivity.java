@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.tutorial.learnblender3d.Adapters.VideoAdapter;
 import com.tutorial.learnblender3d.Models.VideoModel;
@@ -15,12 +18,14 @@ public class VideosActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     Vector<VideoModel> videos = new Vector<>();
-
+    ImageView cancelImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_videos);
+
+        cancelImageView = findViewById(R.id.cancelImageView);
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -49,6 +54,14 @@ public class VideosActivity extends AppCompatActivity {
 
         VideoAdapter videoAdapter = new VideoAdapter(videos);
         recyclerView.setAdapter(videoAdapter);
+
+
+        cancelImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LearnActivity.class));
+            }
+        });
 
     }
 }

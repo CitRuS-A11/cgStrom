@@ -69,15 +69,18 @@ public class StartActivity extends AppCompatActivity {
         CustomModel itemPayOnline = new CustomModel(
                 "Learn 3d modeling with Best practices",
                 "This will be an amazing learning experience",
-                R.drawable.ic_3d);
+                R.drawable.illustration_page2,
+                R.color.background_page1);
         CustomModel itemLearningPaths = new CustomModel(
                 "Start Learning in Learning Paths",
                 "Learning Paths are paths for different sets of cgi, You can learn 3d modeling, Sculpting, Texture Painting and more",
-                R.drawable.ic_hologram);
+                R.drawable.sitting_guy,
+                R.color.louisDuMont);
         CustomModel itemChallenge= new CustomModel(
                 "Daily Challenges and Tournaments",
                 "Complete Daily challenges to solidify your knowledge and compete in tournaments",
-                R.drawable.ic_swords);
+                R.drawable.motion,
+                R.color.colorWhite);
 
         onBoardingItems.add(itemPayOnline );
         onBoardingItems.add(itemLearningPaths);

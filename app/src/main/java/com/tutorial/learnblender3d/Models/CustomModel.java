@@ -11,6 +11,7 @@ public class CustomModel implements Serializable {
     String title;
     String description;
     int imageResource = R.drawable.blender_logo;
+    private int backgroundColor;
 
     public String getTitle() {
         return title;
@@ -36,9 +37,18 @@ public class CustomModel implements Serializable {
         this.imageResource = imageResource;
     }
 
-    public CustomModel(String title, String description, int imageResource) {
+    public CustomModel(String title, String description, int imageResource, int backgroundColor) {
         this.title = title;
         this.description = description;
         this.imageResource = imageResource;
+        this.backgroundColor = backgroundColor;
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColor;
+    }
+
+    public void setBackgroundColor(int backgroundColor) {
+        this.backgroundColor = backgroundColor;
     }
 }

@@ -66,3 +66,18 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         }
     }
 }
+
+
+//        arFragment = (ArFragment) getSupportFragmentManager().findFragmentById(R.id.sceneform_ux_fragment);
+//        setupModel();
+//        setClickListner();
+//        arFragment.setOnTapArPlaneListener(new BaseArFragment.OnTapArPlaneListener() {
+//            @Override
+//            public void onTapPlane(HitResult hitResult, Plane plane, MotionEvent motionEvent) {
+//
+//                Anchor anchor = hitResult.createAnchor();
+//                AnchorNode anchorNode = new AnchorNode(anchor);
+//                anchorNode.setParent(arFragment.getArSceneView().getScene());
+//
+//                createModel(anchorNode);
+//        });

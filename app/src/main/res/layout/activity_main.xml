@@ -17,8 +17,8 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/cgstorm_white" />
 
         <TextView
@@ -30,12 +30,7 @@
             android:textColor="@color/colorWhite"
             android:textSize="30sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_dropdown_menu"
-            android:layout_marginStart="190dp"
-            />
+
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -176,4 +171,12 @@
             android:textColor="@color/colorWhite"
             android:textSize="14sp" />
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/bottombar"
+        android:layout_alignParentBottom="true"
+        />
 </RelativeLayout>

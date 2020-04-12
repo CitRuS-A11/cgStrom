@@ -7,6 +7,39 @@
     tools:context=".LearnActivity">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/navigateBack"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_navigate_before_black_24dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/raleway_bold"
+            android:gravity="center"
+            android:text="Learn"
+            android:textColor="@color/colorWhite"
+            android:textSize="38sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
     <TextView
         android:id="@+id/modelingTexttView"
         android:layout_width="match_parent"
@@ -26,20 +59,25 @@
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolBar"
         app:srcCompat="@drawable/ic_cubes" />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintTop_toBottomOf="@+id/modelingTexttView"/>
 
     <TextView
         android:id="@+id/videosTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
         android:fontFamily="@font/raleway_medium"
         android:text="Video Tutorials"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modelingImageView"
+        app:layout_constraintTop_toBottomOf="@+id/videosImageView"
         tools:textColor="@color/design_default_color_on_secondary" />
 
     <ImageView
@@ -51,28 +89,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_3d_printer" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintTop_toBottomOf="@+id/videosTextView"/>
 
     <ImageView
         android:id="@+id/nodesImageView"
         android:layout_width="197dp"
         android:layout_height="121dp"
-        android:layout_marginTop="504dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
         app:srcCompat="@drawable/ic_virtual_reality_glasses" />
 
     <TextView
         android:id="@+id/nodesTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="468dp"
         android:fontFamily="@font/raleway_medium"
         android:text="Material Nodes"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modelingImageView"
+        app:layout_constraintTop_toBottomOf="@+id/nodesImageView"
         tools:textColor="@color/design_default_color_on_secondary" />
-
+    <ImageView
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:src="@drawable/bottombar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorBorder"
+        app:layout_constraintTop_toBottomOf="@+id/nodesTextView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

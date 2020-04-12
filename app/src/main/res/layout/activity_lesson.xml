@@ -8,38 +8,259 @@
     android:background="@color/colorBlueshWhite"
     >
 
-<LinearLayout
-    android:id="@+id/topBarLinearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:orientation="horizontal"
-    android:background="@color/colorWhite"
-    >
+    <LinearLayout
+            android:id="@+id/topBarLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:orientation="horizontal"
+            android:background="@color/colorWhite"
+            >
 
-    <ImageView
-        android:id="@+id/cancelImageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_clear"
-        android:layout_gravity="center"
-        android:layout_marginStart="28dp"/>
+            <ImageView
+                android:id="@+id/cancelImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_clear"
+                android:layout_gravity="center"
+                android:layout_marginStart="28dp"/>
 
-    <ProgressBar
-        android:id="@+id/progressbarHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_gravity="center"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        />
+            <ProgressBar
+                android:id="@+id/progressbarHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_gravity="center"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                />
 
 </LinearLayout>
-<View
-    android:id="@+id/view"
-    android:layout_width="match_parent"
-    android:layout_height="3dp"
-    android:background="@color/colorBorder"
-    android:layout_below="@+id/topBarLinearLayout"
-    />
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorBorder"
+        android:layout_below="@+id/topBarLinearLayout"
+        />
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/scrollView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/view"-->
+<!--        >-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/layoutInsideScrollView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/lessonTextView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:fontFamily="@font/raleway_regular"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="Then scale by the y, z direction"-->
+<!--                android:textColor="@color/blueshBlack"-->
+<!--                android:textSize="18sp" />-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/lessonImageView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="183dp"-->
+<!--                android:layout_below="@id/lessonTextView"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:src="@drawable/lesson0x2" />-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/answersLayout"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@id/lessonImageView">-->
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/answer1"-->
+<!--                    android:tag="0"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="6dp"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:layout_marginBottom="6dp"-->
+<!--                    android:background="@drawable/thin_stroke_border"-->
+<!--                    android:backgroundTint="@color/colorWhite"-->
+<!--                    android:backgroundTintMode="src_over"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="16dp">-->
+
+<!--                    <TextView-->
+<!--                        android:tag="0"-->
+<!--                        android:id="@+id/answerTextView"-->
+<!--                        android:layout_width="310dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/raleway_medium"-->
+<!--                        android:paddingStart="6dp"-->
+<!--                        android:paddingTop="4dp"-->
+<!--                        android:paddingBottom="4dp"-->
+<!--                        android:text="The one on the left and the one on the right"-->
+<!--                        android:textColor="@color/blueshBlack"-->
+<!--                        android:textSize="22sp" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/correctAnswerCheckMarkImageView"-->
+<!--                        android:layout_width="41dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:src="@drawable/ic_icons8_checkmark"-->
+<!--                        android:visibility="invisible"-->
+<!--                        />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/answer2"-->
+<!--                    android:tag="1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/answer1"-->
+<!--                    android:layout_marginStart="6dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:layout_marginBottom="6dp"-->
+<!--                    android:background="@drawable/thin_stroke_border"-->
+<!--                    android:backgroundTint="@color/colorWhite"-->
+<!--                    android:backgroundTintMode="src_over"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="16dp">-->
+
+<!--                    <TextView-->
+<!--                        android:tag="1"-->
+<!--                        android:id="@+id/answerTextView2"-->
+<!--                        android:layout_width="310dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/raleway_medium"-->
+<!--                        android:paddingStart="6dp"-->
+<!--                        android:paddingTop="4dp"-->
+<!--                        android:paddingBottom="4dp"-->
+<!--                        android:text="The one on the left"-->
+<!--                        android:textColor="@color/blueshBlack"-->
+<!--                        android:textSize="22sp" />-->
+
+<!--                    <ImageView-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:id="@+id/correctAnswerCheckMarkImageView2"-->
+<!--                        android:layout_width="41dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:src="@drawable/ic_icons8_checkmark" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:visibility="invisible"-->
+<!--                    android:id="@+id/answer3"-->
+<!--                    android:tag="2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/answer2"-->
+<!--                    android:layout_marginStart="6dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:layout_marginBottom="6dp"-->
+<!--                    android:background="@drawable/thin_stroke_border"-->
+<!--                    android:backgroundTint="@color/colorWhite"-->
+<!--                    android:backgroundTintMode="src_over"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="10dp"-->
+<!--                    android:paddingBottom="16dp">-->
+
+<!--                    <TextView-->
+<!--                        android:tag="2"-->
+<!--                        android:id="@+id/answerTextView3"-->
+<!--                        android:layout_width="310dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:fontFamily="@font/raleway_medium"-->
+<!--                        android:paddingStart="6dp"-->
+<!--                        android:paddingTop="4dp"-->
+<!--                        android:paddingBottom="4dp"-->
+<!--                        android:text="The one on the left and the one on the right"-->
+<!--                        android:textColor="@color/blueshBlack"-->
+<!--                        android:textSize="22sp" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/correctAnswerCheckMarkImageView3"-->
+<!--                        android:layout_width="41dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:src="@drawable/ic_icons8_checkmark" />-->
+
+<!--                </LinearLayout>-->
+<!--            </LinearLayout>-->
+<!--        </RelativeLayout>-->
+<!--    </ScrollView>-->
+
+    <LinearLayout
+        android:id="@+id/bottomBarLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border"
+        android:backgroundTint="@color/colorWhite"
+        android:backgroundTintMode="src_over"
+        >
+
+        <ImageView
+            android:id="@+id/nextImageView"
+            android:layout_width="58dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_play" />
+    </LinearLayout>
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/sceneform_ux_fragment"-->
+<!--        android:name="com.google.ar.sceneform.ux.ArFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        -->
+<!--        />-->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/lessonViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view"
+        />
+
+    <HorizontalScrollView
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/cubeImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_cubes"
+                android:layout_marginTop="60dp"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+
+
 </RelativeLayout>
