@@ -23,14 +23,16 @@ import com.tutorial.learnblender3d.Models.CustomLessonModel;
 import com.tutorial.learnblender3d.Models.CustomModel;
 import com.tutorial.learnblender3d.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.lessonViewHolder> {
 
-    private List<CustomLessonModel> onBoardingItems;
+    private ArrayList<CustomLessonModel> onBoardingItems;
     private Context context;
+    private static final int CHECKMARK_IN_LAYOUT = 1;
 
-    public LessonAdapter(Context context, List<CustomLessonModel> onBoardingItems) {
+    public LessonAdapter(Context context, ArrayList<CustomLessonModel> onBoardingItems) {
         this.context = context;
         this.onBoardingItems = onBoardingItems;
     }
@@ -107,9 +109,20 @@ public class LessonAdapter extends RecyclerView.Adapter<LessonAdapter.lessonView
                     @Override
                     public void onClick(View v) {
                         if(answer1 == correctAnswer) {
-
+                            answer1checkMark.setVisibility(View.VISIBLE);
                         } else {
                             Snackbar.make(v, "Wrong Answer", BaseTransientBottomBar.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+                answer2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(answer2 == correctAnswer) {
+                            answer2checkMark.setVisibility(View.VISIBLE);
+                        } else {
+                            Snackbar.make(v, "Wrong Answer", BaseTransientBottomBar.LENGTH_SHORT);
+
                         }
                     }
                 });

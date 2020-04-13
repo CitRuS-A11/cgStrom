@@ -26,7 +26,7 @@ public class LearnActivity extends AppCompatActivity {
     ArrayList<Integer> pagesThatHaveQuiz = new ArrayList<Integer>();
 
     public static final String numberOfQuestionsKey = "Key1";
-    public static final String lessonText = "Key3";
+    public static final String LIST_KEY = "Key3";
     public static final String questionText = "Key4";
     public static final String correctQuestions = "Key5";
 
@@ -52,7 +52,6 @@ public class LearnActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LearnActivity.this, LessonActivity.class);
-                startActivity(intent);
                 int numberOfPages;
                 numberOfPages = 5;
                 final int PAGES_THAT_HAVE_QUESTIONS = 2;
@@ -77,7 +76,7 @@ public class LearnActivity extends AppCompatActivity {
                 lessonTextArray[1] = "Blender is a free easy to use 3d software that enables us to many things other than just 3d";
                 lessonTextArray[2] = "Why choose Blender";
                 lessonTextArray[3] = "Now that you know why you should use blender let's install it!!   First open your pc and go to www.blender.org    This will be the place where you will install blender and embark on your journey";
-                lessonTextArray[4] = "Know have you installed Blender and how was your first lesson in cgStorm";
+                lessonTextArray[4] = "Have you installed Blender yet, and how was your first lesson in cgStorm";
 
                 imageSequence[0] = R.drawable.transparent_empty;
                 imageSequence[1] = R.drawable.lesson0x0;
@@ -91,13 +90,13 @@ public class LearnActivity extends AppCompatActivity {
                 questionTextArray[1][1] = "Could be better";
 
                 correctQuestionsArray[0] = 0;
-                correctQuestionsArray[1] = 1;
+                correctQuestionsArray[1] = 0;
 
                 ArrayList<CustomLessonModel> list = new ArrayList<>();
                 for (int i = 0; i < numberOfPages; i++) {
                     CustomLessonModel customLessonModel = new CustomLessonModel(
                             imageSequence[i],
-                            /*hasQuestions[i]*/false,
+                            hasQuestions[i],
                             lessonTextArray[i]
                     );
                     list.add(customLessonModel);
@@ -109,7 +108,9 @@ public class LearnActivity extends AppCompatActivity {
                             }
                         }
                         String j = String.valueOf(i);
-                        intent.putExtra(j, list.get(i));
+                        SimpleLesson simpleLesson = new SimpleLesson();
+                        simpleLesson.setList(list);
+                        intent.putExtra(LIST_KEY, simpleLesson);
                     }
                 }
                 startActivity(intent);

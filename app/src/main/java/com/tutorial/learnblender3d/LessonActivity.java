@@ -5,19 +5,24 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
+import com.tutorial.learnblender3d.Adapters.CustomLessonAdapter;
 import com.tutorial.learnblender3d.Adapters.LessonAdapter;
 import com.tutorial.learnblender3d.Models.CustomLessonModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class LessonActivity extends AppCompatActivity {
 
@@ -79,24 +84,31 @@ public class LessonActivity extends AppCompatActivity {
         assert bundle != null;
         numberOfPages = bundle.getInt(LearnActivity.numberOfQuestionsKey);
 
-        for (int i = 0; i < numberOfPages; i++) {
-            try {
-                CustomLessonModel customLessonModel = (CustomLessonModel) bundle.getSerializable(String.valueOf(i));
-                list.add(customLessonModel);
-            } catch (Exception e) {
-                break;
-            }
 
-        }
+//        for (int i = 0; i < numberOfPages; i++) {
+//            try {
+//                CustomLessonModel customLessonModel = (CustomLessonModel) bundle.getSerializable(String.valueOf(i));
+//                list.add(customLessonModel);
+//            } catch (Exception e) {
+//                break;
+//            }
+//
+//        }
 
-        lessonAdapter = new LessonAdapter(this, list);
-        viewPager2 = findViewById(R.id.viewPager2);
+        SimpleLesson simpleLesson = (SimpleLesson) bundle.getSerializable(LearnActivity.LIST_KEY);
+
+        assert simpleLesson != null;
+        list = simpleLesson.getList();
+    lessonAdapter = new LessonAdapter(this, list);
+        viewPager2 = findViewById(R.id.lessonViewPager);
+
+//        viewPager2.setAdapter(new LessonAdapter(this, list));
         viewPager2.setAdapter(lessonAdapter);
 
         float firstCalc = (float) 1 / numberOfPages;
         int finalCalculation = (int) ((firstCalc) * 100);
 
-        progressBar.setProgress(calculateProgress(numberOfPages));
+        progressBar.setProgress(calculateProgress(0));
         progressBar.setScaleY(2.4f);
 
 

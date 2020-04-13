@@ -168,13 +168,13 @@
         android:id="@+id/bottomBarLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:gravity="end"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/border"
         android:backgroundTint="@color/colorWhite"
         android:backgroundTintMode="src_over"
-        >
+        android:gravity="end"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-37dp">
 
         <ImageView
             android:id="@+id/nextImageView"
