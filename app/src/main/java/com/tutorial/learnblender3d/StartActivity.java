@@ -1,10 +1,12 @@
 package com.tutorial.learnblender3d;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import com.google.android.material.button.MaterialButton;
 import com.tutorial.learnblender3d.Adapters.CustomPagerAdapter;
 import com.tutorial.learnblender3d.Models.CustomModel;
 
+import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,9 +26,19 @@ public class StartActivity extends AppCompatActivity {
     private CustomPagerAdapter onBoardingAdapter;
     LinearLayout layoutOnboardingIndicators;
     MaterialButton materialButton;
+    int backgroundImages[] = {R.drawable.illustration_page2_full_page, R.drawable.jean_piere_fullscreen, R.drawable.sitting_guy_full};
+
+    public static  final String skipStartSharedPreferences = "skipStart";
+    public static final String SKIP = "skip";
+
+    private boolean doSkip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        if (loadData()) {
+//            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//            finish();
+//        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
@@ -35,6 +48,7 @@ public class StartActivity extends AppCompatActivity {
         viewPager2.setAdapter(onBoardingAdapter);
         layoutOnboardingIndicators = findViewById(R.id.layoutIndicator);
         materialButton = findViewById(R.id.materialButton);
+        ConstraintLayout layout = findViewById(R.id.startLayoutFile);
 
         setupOnboardingIndicators();
 
@@ -45,6 +59,7 @@ public class StartActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
                 setCurrentOnboardingIndicator(position);
+                layout.setBackgroundResource(backgroundImages[position]);
             }
         });
 
@@ -54,12 +69,25 @@ public class StartActivity extends AppCompatActivity {
                 if (viewPager2.getCurrentItem() + 1 < onBoardingAdapter.getItemCount()) {
                     viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
                 } else {
+                    saveData();
                     startActivity(new Intent(getApplication(), MainActivity.class));
                     finish();
                 }
             }
         });
 
+    }
+
+    public void saveData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(skipStartSharedPreferences, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(SKIP, true);
+        editor.apply();
+    }
+
+    public boolean loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences(skipStartSharedPreferences, MODE_PRIVATE);
+        return sharedPreferences.getBoolean(SKIP, false);
     }
 
     private void setupOnBoardingItems (){

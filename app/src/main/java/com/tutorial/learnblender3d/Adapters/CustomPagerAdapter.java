@@ -61,7 +61,7 @@ public class CustomPagerAdapter extends RecyclerView.Adapter<CustomPagerAdapter.
         void setOnBoardingData(CustomModel onBoardingItem) {
             titleTextView.setText(onBoardingItem.getTitle());
             descriptionTextView.setText(onBoardingItem.getDescription());
-            imageView.setImageResource(onBoardingItem.getImageResource());
+//            imageView.setImageResource(onBoardingItem.getImageResource());
 //            linearLayout.setBackgroundColor(onBoardingItem.getBackgroundColor());
         }
     }

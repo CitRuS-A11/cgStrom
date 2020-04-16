@@ -14,4 +14,7 @@
     <color name="answerCorrectGreen">#4DF776</color>
     <color name="background_page1">#E0EAF4</color>
     <color name="louisDuMont">#E0EAF4</color>
+    <color name="colorSelectedAnswerColor">#DFECFC</color>
+    <color name="colorRed">#FF5539</color>
+    <color name="colorInactive">#757575</color>
 </resources>

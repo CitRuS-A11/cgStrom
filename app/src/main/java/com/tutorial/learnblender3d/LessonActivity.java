@@ -1,28 +1,24 @@
 package com.tutorial.learnblender3d;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.ViewRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
-import com.tutorial.learnblender3d.Adapters.CustomLessonAdapter;
 import com.tutorial.learnblender3d.Adapters.LessonAdapter;
 import com.tutorial.learnblender3d.Models.CustomLessonModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LessonActivity extends AppCompatActivity {
 
@@ -41,6 +37,9 @@ public class LessonActivity extends AppCompatActivity {
     LinearLayout answer1, answer2, answer3;
     TextView answerTextView1, answerTextView2, answerTextView3;
     ImageView chackboxAnswer1, chackboxAnswer2, chackboxAnswer3;
+
+    LinearLayout bottomCheckAnswerLayout;
+    ImageView nextImageView;
 
     int numberOfPages;
 
@@ -77,7 +76,8 @@ public class LessonActivity extends AppCompatActivity {
         chackboxAnswer2 = findViewById(R.id.correctAnswerCheckMarkImageView2);
         chackboxAnswer3 = findViewById(R.id.correctAnswerCheckMarkImageView3);
 
-
+        bottomCheckAnswerLayout = findViewById(R.id.bottomBarLinearLayout);
+        nextImageView = findViewById(R.id.nextImageView);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -102,32 +102,79 @@ public class LessonActivity extends AppCompatActivity {
     lessonAdapter = new LessonAdapter(this, list);
         viewPager2 = findViewById(R.id.lessonViewPager);
 
-//        viewPager2.setAdapter(new LessonAdapter(this, list));
         viewPager2.setAdapter(lessonAdapter);
 
         float firstCalc = (float) 1 / numberOfPages;
         int finalCalculation = (int) ((firstCalc) * 100);
 
-        progressBar.setProgress(calculateProgress(0));
+
         progressBar.setScaleY(2.4f);
 
 
         cancelImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), LearnActivity.class));
+                startActivity(new Intent(LessonActivity.this, LearnActivity.class));
             }
         });
-//
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+
+                calculateProgress(position);
+            }
+        });
+
+
+        enableButtonClick(false);
+
 
     }
 
-    private int calculateProgress(int currentPagePosition) {
+    View.OnClickListener buttonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if(viewPager2.getCurrentItem() + 1 < lessonAdapter.getItemCount())
+                viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+            else {
+                Intent intent = new Intent(
+                        getApplicationContext(), FinishedLessonActivity.class
+                );
+                intent.putExtra("Key1", getString(R.string.finished_first_lesson));
+                startActivity(intent);
+                finish();
+            }
+        }
+    };
+
+    private void calculateProgress(int currentPagePosition) {
         float firstCalc = (float) currentPagePosition / numberOfPages;
         int finalCalculation = (int) ((firstCalc) * 100);
 
-        return (int) ((firstCalc) * 100);
+        progressBar.setProgress(finalCalculation);
     }
+
+    public void disableButtonClick() {
+        nextImageView.setImageDrawable(getDrawable(R.drawable.ic_play_inactive));
+
+        nextImageView.setOnClickListener(null);
+    }
+
+    public void enableButtonClick(boolean hasQuestion) {
+        nextImageView.setImageDrawable(getDrawable(R.drawable.ic_play));
+
+        nextImageView.setOnClickListener(buttonClickListener);
+
+    }
+
+    public void buttonClickOnCorrectAnswer(String winningSentence) {
+
+    }
+    public void buttonClickOnWrongAnswer(String winningSentence) {
+    }
+
 }
 //
 //    private void setClickListner() {

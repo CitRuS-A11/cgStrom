@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_30px"
+        android:title="@string/home"
+        />
+    <item
+        android:id="@+id/nav_learn"
+        android:icon="@drawable/glasses_32px"
+        android:title="@string/learn"
+        />
+    <item
+        android:id="@+id/nav_challenge"
+        android:icon="@drawable/trophy_30px"
+        android:title="@string/challenge"
+        />
+
+    <item
+        android:id="@+id/nav_community"
+        android:icon="@drawable/comments_24px"
+        android:title="@string/community"
+        />
+
+</menu>

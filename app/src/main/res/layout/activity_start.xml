@@ -5,16 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartActivity"
-    android:background="@color/colorWhiteDB"
+    android:background="@drawable/sitting_guy_full"
+    android:id="@+id/startLayoutFile"
     >
-
+    <View
+        android:id="@+id/view5"
+        android:layout_width="421dp"
+        android:layout_height="121dp"
+        android:background="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/layoutIndicator" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
         android:layout_width="120dp"
         android:layout_height="61dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="15dp"
-        android:textSize="22sp"
+        android:textSize="19sp"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,8 +32,15 @@
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="408dp"
+        android:layout_height="637dp"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" >
+
+    </androidx.viewpager2.widget.ViewPager2>
 
     <LinearLayout
         android:id="@+id/layoutIndicator"
@@ -35,6 +50,7 @@
         android:layout_marginEnd="20dp"
         android:orientation="horizontal"
         android:padding="15dp"
+        android:background="@color/colorWhite"
         app:layout_constraintBottom_toBottomOf="@+id/materialButton"
         app:layout_constraintEnd_toStartOf="@+id/materialButton"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,4 +64,6 @@
         app:layout_constraintBottom_toTopOf="@+id/layoutIndicator"
         android:layout_marginBottom="32dp"
         />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

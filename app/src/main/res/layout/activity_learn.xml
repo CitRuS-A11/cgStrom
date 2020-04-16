@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearnActivity">
+    tools:context=".LearnActivity"
+    android:background="@color/colorBlueshWhite">
 
 
     <androidx.appcompat.widget.Toolbar
@@ -33,7 +34,7 @@
             android:layout_marginTop="2dp"
             android:fontFamily="@font/raleway_bold"
             android:gravity="center"
-            android:text="Learn"
+            android:text="@string/learn"
             android:textColor="@color/colorWhite"
             android:textSize="38sp" />
 
@@ -117,16 +118,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nodesImageView"
         tools:textColor="@color/design_default_color_on_secondary" />
-    <ImageView
-        android:id="@+id/bottomNavBar"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:src="@drawable/bottombar"
-        app:layout_constraintBottom_toBottomOf="parent"/>
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:background="@color/colorBorder"
         app:layout_constraintTop_toBottomOf="@+id/nodesTextView"/>
+
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:iconSize="20dp"
+        app:iconTint="@color/colorInactive"
+        app:iconTintActive="@color/colorPrimary"
+        app:indicatorColor="@color/colorWhite"
+        app:menu="@menu/bottom_navigation"
+        app:textColor="@color/colorPrimary"
+        app:textSize="16sp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

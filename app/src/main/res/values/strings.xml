@@ -10,4 +10,24 @@
     <string name="blender_guru_description">This tutorial is made by blender guru who is the most popular blender user in this tutorial you will be able to follow along with him and make a delicious donut</string>
     <string name="borncg_description">This blender tutorial is easy to follow along and every episode has a small project you could follow</string>
     <string name="blenderoffical_description">This is the official Blender tutorial that covers basics to blender</string>
+    <string name="finished_first_lesson">You finished your first Lesson in cgStorm how do you feel, You started your first steps to learning cgi</string>
+    <string name="home">Home</string>
+    <string name="comming_this_summer">Comming This Summer</string>
+    <string name="whatAre">What are you doing today</string>
+    <string name="what_challenge">What Challenge</string>
+    <string name="are_you_doing">Are you doing</string>
+    <string name="app_slogan">cg Made Easy</string>
+    <string name="release_one">Release One</string>
+    <string name="firstpatch_desctiption">The app is finally in it\'s first faze it will grow and there is so much more</string>
+
+    <string-array name="challenge1Descriptions">
+<!--        <item>For this challenge you can try and make a pen in blender or any 3d software od your choice, If you have any problems you can follow the steps</item>-->
+        <item>First open Blender and delete the default cube by pressing x</item>
+        <item>add a cylinder </item>
+        <item>Then scale the cylinder to look like a pen</item>
+        <item>Add a torus and scale it to the size that you want</item>
+        <item>Move the torus Up to the lid of the pencil</item>
+        <item>Add a cone and scale it to look like a pencil tip and move it up</item>
+        <item>And like that you completed your first challenge hope you enjoyed it</item>
+    </string-array>
 </resources>
